@@ -1,0 +1,6 @@
+<config_plugin>
+	
+	<!-- path to xslt file for barcode generation -->
+	<xslt-path>/opt/digiverso/goobi/xslt/barcodes.xsl</xslt-path>
+	
+</config_plugin>
