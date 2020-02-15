@@ -7,7 +7,7 @@
 
 			<!-- general layout -->
 			<fo:layout-master-set>
-				<fo:simple-page-master master-name="page" page-width="14.8cm" page-height="21.0cm" margin-left="1cm" margin-top="0.7cm"
+				<fo:simple-page-master master-name="page" page-width="14.8cm" page-height="21.0cm" margin-left="1cm" margin-top="0.5cm"
 					margin-right="1cm">
 					<fo:region-body />
 				</fo:simple-page-master>
@@ -19,12 +19,12 @@
 					<fo:flow flow-name="xsl-region-body" font-family="opensans, unicode">
 
 						<!-- Institution logos -->
-						<fo:block text-align="right">
-							<fo:external-graphic src="/opt/digiverso/goobi/xslt/logo_favicon.png" content-width="10mm" top="0cm"/>
+						<fo:block>
+							<fo:external-graphic src="/opt/digiverso/goobi/xslt/logo_italy.png" content-width="130mm" top="0cm"/>
 						</fo:block>
-
+						
 						<!-- Separator -->
-						<fo:block border-top-width="1pt" border-top-style="solid" border-top-color="#cccccc" margin-top="7pt" />
+						<fo:block border-top-width="1pt" border-top-style="solid" border-top-color="#cccccc" margin-top="0pt" />
 
 						<!-- identifier as readable text -->
 						<fo:block text-align="center" font-weight="bold" font-size="20pt" margin-top="160pt">

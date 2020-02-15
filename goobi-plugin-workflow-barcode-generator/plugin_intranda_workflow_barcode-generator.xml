@@ -1,6 +1,19 @@
 <config_plugin>
 	
-	<!-- path to xslt file for barcode generation -->
+	<!--  default value for the number format -->
+	<format>00000</format>
+
+	<!--  default value for the amount of barcodes to be generated -->
+	<amount>200</amount>
+	
+	<!--  default value the first barcode number -->
+	<start>1</start>
+	
+	<!--  default value the first barcode number -->
+	<prefix></prefix>
+
+	<!-- path to xslt file for barcode generation, 
+	this value can exist multiple times and gets displayed as dropdown list -->
 	<xslt-path>/opt/digiverso/goobi/xslt/barcodes.xsl</xslt-path>
 	
 </config_plugin>
