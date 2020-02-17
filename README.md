@@ -10,8 +10,8 @@ Detail | Description
 --- | ---
 **Plugin identifier**       | plugin_intranda_workflow_barcode-generator
 **Plugin type**             | Workflow plugin
-**Documentation (German)**  | - no documentation available -
-**Documentation (English)** | - no documentation available -
+**Documentation (German)**  | https://docs.intranda.com/goobi-workflow-plugins-de/workflow-plugins/plugin-workflow-barcode-generator
+**Documentation (English)** | https://docs.intranda.com/goobi-workflow-plugins-en/workflow-plugins/plugin-workflow-barcode-generator
 
 ## Goobi details
 
