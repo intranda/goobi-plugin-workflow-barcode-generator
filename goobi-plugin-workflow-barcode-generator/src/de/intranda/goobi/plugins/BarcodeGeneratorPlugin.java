@@ -86,6 +86,7 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 	private int startNumber;
 	private int amount;
 	private String format;
+	private String separator;
 
 	/**
 	 * Constructor
@@ -102,6 +103,7 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 		xsltPath = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("xslt-path",
 				ConfigurationHelper.getInstance().getXsltFolder() + "barcode.xslt");
 		prefix = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("prefix", "");
+		separator = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("separator", "_");
 		startNumber = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getInt("start", 1);
 		amount = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getInt("amount", 10);
 		format = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("format", "00000000");
@@ -145,6 +147,7 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 	public void generateBarcodes() {
 		log.debug("Barcode generation started");
 		log.debug("prefix: " + prefix);
+		log.debug("separator: " + separator);
 		log.debug("startNumber: " + startNumber);
 		log.debug("amount: " + amount);
 		log.debug("xsltPath: " + xsltPath);
@@ -171,7 +174,7 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 				if (prefix.isEmpty()) {
 					process.setText(current);
 				} else {
-					process.setText(prefix + "_" + current);
+					process.setText(prefix + separator + current);
 				}
 				mainElement.addContent(process);
 			}
