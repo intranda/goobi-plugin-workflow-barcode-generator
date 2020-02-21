@@ -81,7 +81,7 @@ import net.xeoh.plugins.base.annotations.PluginImplementation;
 public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 	private static final String PLUGIN_NAME = "intranda_workflow_barcode-generator";
 
-	private String xsltPath;
+	private String xsltFile;
 	private String prefix;
 	private int startNumber;
 	private int amount;
@@ -100,8 +100,8 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 	 * general initialisation
 	 */
 	private void initialize() {
-		xsltPath = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("xslt-path",
-				ConfigurationHelper.getInstance().getXsltFolder() + "barcode.xslt");
+		xsltFile = ConfigurationHelper.getInstance().getXsltFolder() + ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("xslt-file",
+				"barcode.xslt");
 		prefix = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("prefix", "");
 		separator = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("separator", "_");
 		startNumber = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getInt("start", 1);
@@ -133,10 +133,10 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 	 * offer a list of all available xsl files to select from
 	 */
 	@SuppressWarnings("unchecked")
-	public List<SelectItem> getXsltPathes() {
+	public List<SelectItem> getXsltFiles() {
 		List<SelectItem> pathes = new ArrayList<>();
-		for (String s : (List<String>) ConfigPlugins.getPluginConfig(PLUGIN_NAME).getList("xslt-path")) {
-			pathes.add(new SelectItem(s));
+		for (String s : (List<String>) ConfigPlugins.getPluginConfig(PLUGIN_NAME).getList("xslt-file")) {
+			pathes.add(new SelectItem(ConfigurationHelper.getInstance().getXsltFolder() + s));
 		}
 		return pathes;
 	}
@@ -150,7 +150,7 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 		log.debug("separator: " + separator);
 		log.debug("startNumber: " + startNumber);
 		log.debug("amount: " + amount);
-		log.debug("xsltPath: " + xsltPath);
+		log.debug("xsltFile: " + xsltFile);
 
 		try {
 			// prepare the xml source
@@ -194,7 +194,7 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
 			out.close();
 
 			// find xslt file
-			Path xsltfile = Paths.get(xsltPath);
+			Path xsltfile = Paths.get(xsltFile);
 			if (!StorageProvider.getInstance().isFileExists(xsltfile)) {
 				Helper.setFehlerMeldung("plugin_barcode_generation_missingXslFile");
 				return;

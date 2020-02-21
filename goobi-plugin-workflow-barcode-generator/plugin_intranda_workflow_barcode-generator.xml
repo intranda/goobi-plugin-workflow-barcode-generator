@@ -16,8 +16,8 @@
 	if the prefix is empty this separator does not get used -->
 	<separator>_</separator>
 	
-	<!-- path to xslt file for barcode generation, 
+	<!-- filename of an xslt file for barcode generation, 
 	this value can exist multiple times and gets displayed as dropdown list -->
-	<xslt-path>/opt/digiverso/goobi/xslt/barcodes.xsl</xslt-path>
+	<xslt-file>barcodes.xsl</xslt-file>
 	
 </config_plugin>
