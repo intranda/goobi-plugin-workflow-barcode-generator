@@ -20,9 +20,9 @@
 
 						<!-- Institution logos -->
 						<fo:block>
-							<fo:external-graphic src="/opt/digiverso/goobi/xslt/logo_italy.png" content-width="130mm" top="0cm"/>
+							<fo:external-graphic src="logo_italy.png" content-width="130mm" top="0cm"/>
 						</fo:block>
-						
+
 						<!-- Separator -->
 						<fo:block border-top-width="1pt" border-top-style="solid" border-top-color="#cccccc" margin-top="0pt" />
 
@@ -53,7 +53,7 @@
 						<!-- Goobi logo -->
 						<fo:block-container position="fixed" left="1cm" top="19.5cm">
 							<fo:block>
-								<fo:external-graphic src="/opt/digiverso/goobi/xslt/logo.png" content-width="22mm" />
+								<fo:external-graphic src="logo.png" content-width="22mm" />
 							</fo:block>
 						</fo:block-container>
 
