@@ -1,17 +1,22 @@
-# Goobi workflow Plugin: Barcode Generator
+# Goobi workflow Plugin: plugin-workflow-barcode-generator
+
+<img src="https://goobi.io/wp-content/uploads/logo_goobi_plugin.png" align="right" style="margin:0 0 20px 20px;" alt="Plugin for Goobi workflow" width="175" height="109">
 
 This is a workflow plugin for Goobi workflow. It is used to allow users to generate any number of barcodes as pdf files. Using the configuration file and the provided user interface it can highly be customized and allow very individual barcodes with different numbering, amount, prefixes and even styling.
 
+This is a plugin for Goobi workflow, the open source workflow tracking software for digitisation projects. More information about Goobi workflow is available under https://goobi.io. If you want to get in touch with the user community simply go to https://community.goobi.io.
+
 ## Plugin details
 
-More information about the functionality of this plugin and the complete documentation can be found in the central documentation area at https://docs.intranda.com
+More information about the functionality of this plugin and the complete documentation can be found in the central documentation area at https://docs.goobi.io
 
 Detail | Description
 --- | ---
 **Plugin identifier**       | plugin_intranda_workflow_barcode-generator
 **Plugin type**             | Workflow plugin
-**Documentation (German)**  | https://docs.intranda.com/goobi-workflow-plugins-de/workflow-plugins/plugin-workflow-barcode-generator
-**Documentation (English)** | https://docs.intranda.com/goobi-workflow-plugins-en/workflow-plugins/plugin-workflow-barcode-generator
+**Licence**                 | GPL 2.0 or newer  
+**Documentation (German)**  | https://docs.goobi.io/goobi-workflow-plugins-de/workflow/plugin-workflow-barcode-generator
+**Documentation (English)** | https://docs.goobi.io/goobi-workflow-plugins-en/workflow/plugin-workflow-barcode-generator
 
 ## Goobi details
 
@@ -25,7 +30,7 @@ Detail | Description
 
 ## Development
 
-This plugin was developed by intranda. If you have any issues, feedback, question or if you are looking for more information about Goobi workflow, Goobi viewer and all our other developments that are used in digitisation projects please get in touch with us.
+This plugin was developed by intranda. If you have any issues, feedback, question or if you are looking for more information about Goobi workflow, Goobi viewer and all our other developments that are used in digitisation projects please get in touch with us.  
 
 Contact | Details
 --- | ---
