@@ -79,7 +79,7 @@ import net.xeoh.plugins.base.annotations.PluginImplementation;
 @Log4j
 @Data
 public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
-	private static final String PLUGIN_NAME = "intranda_workflow_barcode-generator";
+	private static final String PLUGIN_NAME = "intranda_workflow_barcode_generator";
 
 	private String xsltFile;
 	private String prefix;

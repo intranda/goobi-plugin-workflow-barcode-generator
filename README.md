@@ -12,7 +12,7 @@ More information about the functionality of this plugin and the complete documen
 
 Detail | Description
 --- | ---
-**Plugin identifier**       | plugin_intranda_workflow_barcode-generator
+**Plugin identifier**       | intranda_workflow_barcode_generator
 **Plugin type**             | Workflow plugin
 **Licence**                 | GPL 2.0 or newer  
 **Documentation (German)**  | https://docs.goobi.io/goobi-workflow-plugins-de/workflow/plugin-workflow-barcode-generator
