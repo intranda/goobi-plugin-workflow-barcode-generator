@@ -4,7 +4,7 @@
 	<artifactId>barcode-generator-main</artifactId>
 	<version>1.0.0</version>
 	<properties>
-		<jar.name>plugin_intranda_workflow_barcode-generator</jar.name>
+		<jar.name>plugin_intranda_workflow_barcode_generator</jar.name>
 		<dest.folder>/opt/digiverso/goobi/plugins/workflow/</dest.folder>
 	</properties>
 	<parent>
