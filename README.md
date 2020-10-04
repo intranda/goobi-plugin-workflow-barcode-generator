@@ -15,8 +15,8 @@ Detail | Description
 **Plugin identifier**       | intranda_workflow_barcode_generator
 **Plugin type**             | Workflow plugin
 **Licence**                 | GPL 2.0 or newer  
-**Documentation (German)**  | https://docs.goobi.io/goobi-workflow-plugins-de/workflow/plugin-workflow-barcode-generator
-**Documentation (English)** | https://docs.goobi.io/goobi-workflow-plugins-en/workflow/plugin-workflow-barcode-generator
+**Documentation (German)**  | https://docs.goobi.io/goobi-workflow-plugins-de/workflow/intranda_workflow_barcode_generator 
+**Documentation (English)** | https://docs.goobi.io/goobi-workflow-plugins-en/workflow/intranda_workflow_barcode_generator 
 
 ## Goobi details
 
