@@ -1,11 +1,15 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:composite="http://xmlns.jcp.org/jsf/composite"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	template="/uii/templatePG/templatePG.html"
 	xmlns:x="http://myfaces.apache.org/tomahawk"
-	xmlns:intranda="http://xmlns.jcp.org/jsf/composite/composites"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:intranda="http://xmlns.jcp.org/jsf/composite/compositesPG"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
 	xmlns:p="http://primefaces.org/ui">
 
 	<composite:interface>
@@ -13,91 +17,97 @@
 
 	<composite:implementation>
 
-		<h:form id="myform" styleClass="form-horizontal form-bordered"
+		<h:form
+			id="myform"
 			onkeypress="submitOnEnter(event);">
 
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="box box-color orange box-bordered">
-						<div class="box-title">
-							<h3>
-								<i class="fa fa-plug"></i>
-								<h:outputText
-									value="#{msgs[NavigationForm.workflowPlugin.title]}" />
-							</h3>
+
+
+					<intranda:box
+						boxType="action"
+						boxForm="true"
+						boxPadding="false"
+						icon="fa-plug"
+						title="#{msgs[NavigationForm.workflowPlugin.title]}">
+
+						<!-- Path to xslt file -->
+						<intranda:formInputDropDown
+							id="xsltPath"
+							label="#{msgs.plugin_barcode_generation_xsltFile}"
+							field="#{NavigationForm.workflowPlugin.xsltFile}"
+							help="#{msgs.plugin_barcode_generation_xsltFile_help}"
+							name="xsltFile"
+							selectItems="#{NavigationForm.workflowPlugin.xsltFiles}"
+							required="true" />
+
+						<!-- prefix -->
+						<intranda:formInputText
+							id="prefix"
+							name="prefix"
+							label="#{msgs.plugin_barcode_generation_prefix}"
+							field="#{NavigationForm.workflowPlugin.prefix}"
+							help="#{msgs.plugin_barcode_generation_prefix_help}"
+							required="false" />
+
+						<!-- separator -->
+						<intranda:formInputText
+							id="separator"
+							name="separator"
+							label="#{msgs.plugin_barcode_generation_separator}"
+							field="#{NavigationForm.workflowPlugin.separator}"
+							help="#{msgs.plugin_barcode_generation_separator_help}"
+							required="false" />
+
+						<!-- Format -->
+						<intranda:formInputText
+							id="format"
+							name="format"
+							label="#{msgs.plugin_barcode_generation_format}"
+							field="#{NavigationForm.workflowPlugin.format}"
+							help="#{msgs.plugin_barcode_generation_format_help}"/>
+
+						<!-- Start number -->
+						<intranda:formInputText
+							id="startNumber"
+							name="startNumber"
+							label="#{msgs.plugin_barcode_generation_startNumber}"
+							field="#{NavigationForm.workflowPlugin.startNumber}"
+							help="#{msgs.plugin_barcode_generation_startNumber_help}"/>
+
+						<!-- Amount of Barcodes -->
+						<intranda:formInputText
+							id="amount"
+							name="amount"
+							label="#{msgs.plugin_barcode_generation_amount}"
+							field="#{NavigationForm.workflowPlugin.amount}"
+							help="#{msgs.plugin_barcode_generation_amount_help}"/>
+
+						<!-- Buttons -->
+						<div class="form-actions">
+							<a
+								jsf:id="link_blank"
+								class="btn btn-blank me-2"
+								jsf:immediate="true"
+								jsf:action="#{NavigationForm.workflowPlugin.cancel}">
+								<h:outputText value="#{msgs.abbrechen}" />
+							</a>
+
+							<button
+								class="btn btn-success"
+								jsf:id="absenden"
+								type="submit"
+								jsf:action="#{NavigationForm.workflowPlugin.generateBarcodes}">
+								<i class="fa fa-save"></i>
+								<span>#{msgs.plugin_barcode_generation_generateBarcodes}</span>
+							</button>
 						</div>
-						<div class="box-content nopadding">
 
-							<!-- Path to xslt file -->
-							<intranda:formInputDropDown id="xsltPath" label="#{msgs.plugin_barcode_generation_xsltFile}"
-								field="#{NavigationForm.workflowPlugin.xsltFile}"
-								help="#{msgs.plugin_barcode_generation_xsltFile_help}" name="xsltFile"
-								selectItems="#{NavigationForm.workflowPlugin.xsltFiles}"
-								fieldStyle="form-control" required="true" />
 
-							<!-- prefix -->
-							<intranda:formInputText id="prefix"
-								name="prefix"
-								label="#{msgs.plugin_barcode_generation_prefix}"
-								field="#{NavigationForm.workflowPlugin.prefix}"
-								help="#{msgs.plugin_barcode_generation_prefix_help}"
-								fieldStyle="form-control" 
-								required="false"/>
-
-							<!-- separator -->
-							<intranda:formInputText id="separator"
-								name="separator"
-								label="#{msgs.plugin_barcode_generation_separator}"
-								field="#{NavigationForm.workflowPlugin.separator}"
-								help="#{msgs.plugin_barcode_generation_separator_help}"
-								fieldStyle="form-control" 
-								required="false"/>
-
-							<!-- Format -->
-							<intranda:formInputText id="format" name="format"
-								label="#{msgs.plugin_barcode_generation_format}"
-								field="#{NavigationForm.workflowPlugin.format}"
-								help="#{msgs.plugin_barcode_generation_format_help}"
-								fieldStyle="form-control" />
-
-							<!-- Start number -->
-							<intranda:formInputText id="startNumber" name="startNumber"
-								label="#{msgs.plugin_barcode_generation_startNumber}"
-								field="#{NavigationForm.workflowPlugin.startNumber}"
-								help="#{msgs.plugin_barcode_generation_startNumber_help}"
-								fieldStyle="form-control" />
-
-							<!-- Amount of Barcodes -->
-							<intranda:formInputText id="amount" name="amount"
-								label="#{msgs.plugin_barcode_generation_amount}"
-								field="#{NavigationForm.workflowPlugin.amount}"
-								help="#{msgs.plugin_barcode_generation_amount_help}"
-								fieldStyle="form-control" />
-
-							<!-- Buttons -->
-							<div class="form-actions">
-								<!-- Generate -->
-								<h:commandLink
-									styleClass="btn btn-success submitOnEnter pull-right font-size-s margin-bottom-most"
-									id="absenden" type="submit"
-									actionListener="#{NavigationForm.workflowPlugin.generateBarcodes}">
-									<i class="fa fa-save margin-right-5"></i>
-									<h:outputText
-										value="#{msgs.plugin_barcode_generation_generateBarcodes}" />
-								</h:commandLink>
-								<!-- Cancel -->
-								<h:commandLink
-									styleClass="btn margin-sides-10 font-size-s pull-right"
-									id="cancel" action="#{NavigationForm.workflowPlugin.cancel}">
-									<h:outputText value="#{msgs.abbrechen}" />
-								</h:commandLink>
-							</div>
-
-						</div>
-					</div>
+					</intranda:box>
 				</div>
 			</div>
-
 		</h:form>
 	</composite:implementation>
 </ui:composition>
