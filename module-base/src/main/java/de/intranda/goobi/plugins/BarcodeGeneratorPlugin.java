@@ -30,11 +30,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.faces.context.FacesContext;
-import javax.faces.model.SelectItem;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -64,15 +59,18 @@ import de.sub.goobi.config.ConfigurationHelper;
 import de.sub.goobi.helper.FacesContextHelper;
 import de.sub.goobi.helper.Helper;
 import de.sub.goobi.helper.StorageProvider;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.model.SelectItem;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.Data;
 import lombok.extern.log4j.Log4j;
 import net.xeoh.plugins.base.annotations.PluginImplementation;
 
 /**
- * This plugin is used to generate barcodes. It is implemented as Goobi workflow
- * plugin so that it is accessible to all users with access to the menu
- * 'workflow'. It does not create any kind of processes and it does not change
- * any information inside of the Goobi workflow database.
+ * This plugin is used to generate barcodes. It is implemented as Goobi workflow plugin so that it is accessible to all users with access to the menu
+ * 'workflow'. It does not create any kind of processes and it does not change any information inside of the Goobi workflow database.
  * 
  * @author Steffen Hankiewicz
  */
@@ -80,6 +78,8 @@ import net.xeoh.plugins.base.annotations.PluginImplementation;
 @Log4j
 @Data
 public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
+    private static final long serialVersionUID = 2253037160388668479L;
+
     private static final String PLUGIN_NAME = "intranda_workflow_barcode_generator";
 
     private String xsltFile;
@@ -101,8 +101,9 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
      * general initialisation
      */
     private void initialize() {
-        xsltFile = ConfigurationHelper.getInstance().getXsltFolder() + ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("xslt-file",
-                "barcode.xslt");
+        xsltFile = ConfigurationHelper.getInstance().getXsltFolder() + ConfigPlugins.getPluginConfig(PLUGIN_NAME)
+                .getString("xslt-file",
+                        "barcode.xslt");
         prefix = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("prefix", "");
         separator = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getString("separator", "_");
         startNumber = ConfigPlugins.getPluginConfig(PLUGIN_NAME).getInt("start", 1);
