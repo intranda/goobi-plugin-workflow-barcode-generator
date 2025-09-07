@@ -3,6 +3,10 @@ title: Barcode Generator
 identifier: intranda_workflow_barcode_generator
 description: This workflow plugin allows you to generate various barcodes for use outside Goobi itself.
 published: true
+keywords:
+    - Goobi workflow
+    - Plugin
+    - Workflow Plugin
 ---
 ## Introduction
 This workflow plugin is used for flexible generation of barcodes in a multi-page PDF file. For this purpose, the user can configure different values in a user interface and define which number of barcodes with which prefix and which counter should be generated. At the same time, the user can specify which `XSL file` is to be used to generate the `PDF file`, thus allowing a large degree of freedom with regard to the optical design.
