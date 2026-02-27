@@ -45,7 +45,6 @@ import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.FopFactoryBuilder;
 import org.apache.fop.apps.MimeConstants;
 import org.goobi.production.enums.PluginType;
-import org.goobi.production.plugin.interfaces.IPlugin;
 import org.goobi.production.plugin.interfaces.IWorkflowPlugin;
 import org.jdom2.Attribute;
 import org.jdom2.Document;
@@ -77,7 +76,7 @@ import net.xeoh.plugins.base.annotations.PluginImplementation;
 @PluginImplementation
 @Log4j
 @Data
-public class BarcodeGeneratorPlugin implements IWorkflowPlugin, IPlugin {
+public class BarcodeGeneratorPlugin implements IWorkflowPlugin {
     private static final long serialVersionUID = 2253037160388668479L;
 
     private static final String PLUGIN_NAME = "intranda_workflow_barcode_generator";
