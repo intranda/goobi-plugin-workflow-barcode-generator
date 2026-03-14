@@ -9,7 +9,7 @@ keywords:
     - Workflow Plugin
 ---
 ## Einführung
-Dieses Workflow-Plugin dient zur flexiblen Generierung von Barcodes in einer mehrseitigen PDF-Datei. Hierzu kann der Nutzer in einer Nutzeroberfläche verschiedene Werte konfigurieren und festlegen, welche Anzahl an Barcodes mit welchem Präfix und welchem Zähler erzeugt werden sollen. Zugleich kann festgelegt werden, welche `xsl-Datei` für de Generierung der `PDF-Datei` verwendet werden soll, so dass ein großes Maß an Freiheit hinsichtlich der optischen Gestaltung besteht.
+Dieses Workflow-Plugin dient zur flexiblen Generierung von Barcodes in einer mehrseitigen PDF-Datei. Hierzu kann der Nutzer in einer Nutzeroberfläche verschiedene Werte konfigurieren und festlegen, welche Anzahl an Barcodes mit welchem Präfix und welchem Zähler erzeugt werden sollen. Zugleich kann festgelegt werden, welche `xsl-Datei` für die Generierung der `PDF-Datei` verwendet werden soll, so dass ein großes Maß an Freiheit hinsichtlich der optischen Gestaltung besteht.
 
 
 ## Installation
@@ -76,7 +76,7 @@ Die Konfiguration des Plugins erfolgt innerhalb der oben bereits erwähnten Konf
 | Wert | Beschreibung |
 | :--- | :--- |
 | `format` | Dieser Parameter legt fest, ob die Zähler mit führenden Nullen aufgefüllt werden sollen. Der Wert `00000` beispielsweise legt fest, dass alle Zahlen zumindest mit fünf Stellen angezeigt werden. |
-| `amount` | Dieser Parameter legt fest, wieviele Barcodes festgelegt werden. |
+| `amount` | Dieser Parameter legt fest, wie viele Barcodes festgelegt werden. |
 | `start` | Soll der Zähler für die Barcodes bei einem bestimmten Startwert beginnen, so kann dieser hier festgelegt werden. |
 | `prefix` | Dieser Parameter definiert einen Präfix, der dem Zähler mit einem Unterstrich `_` vorangestellt wird. |
 | `separator` | Mit diesem Parameter kann ein Trennzeichen angegeben werden, dass zwischen Präfix und dem Zähler verwendet werden soll. Sollte der Präfix hingegen nicht angegeben sein, wird das Trennzeichen nicht verwendet. |
