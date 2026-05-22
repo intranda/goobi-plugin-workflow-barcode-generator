@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.xml.XMLConstants;
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -218,6 +219,8 @@ public class BarcodeGeneratorPlugin implements IWorkflowPlugin {
             ByteArrayOutputStream outStream = new ByteArrayOutputStream();
             try {
                 TransformerFactory factory = TransformerFactory.newInstance();
+                factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+                factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
                 Transformer transformer = factory.newTransformer(new StreamSource(xsltfile.toString()));
                 Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, outStream);
                 Result res = new SAXResult(fop.getDefaultHandler());
