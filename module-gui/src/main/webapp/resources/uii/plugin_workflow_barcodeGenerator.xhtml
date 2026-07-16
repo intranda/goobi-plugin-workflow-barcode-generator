@@ -28,7 +28,7 @@
 						boxType="action"
 						boxForm="true"
 						boxPadding="false"
-						icon="fa-plug"
+						icon="plug"
 						title="#{msgs[NavigationForm.workflowPlugin.title]}">
 
 						<!-- Path to xslt file -->
@@ -98,8 +98,7 @@
 								jsf:id="absenden"
 								type="submit"
 								jsf:action="#{NavigationForm.workflowPlugin.generateBarcodes}">
-								<i class="fa fa-save"></i>
-								<span>#{msgs.plugin_barcode_generation_generateBarcodes}</span>
+								<util:icon-text icon="device-floppy" text="#{msgs.plugin_barcode_generation_generateBarcodes}" />
 							</button>
 						</div>
 
